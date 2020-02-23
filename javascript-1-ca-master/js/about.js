@@ -1,25 +1,27 @@
 function logTime() {
     // first log the current date/time
-  //  console.log(new Date());
 
     // if the counter is equal to 4 it means the function has been called 5 times (because we started the counter at 0)
     // cancel the timer - the logTime function won't be called again
     if(counter === 4) {
 
-
+    // Find all the paragraph tags
         const generalParagraph = document.querySelectorAll("p");
-
-        function handleEachPar(item) {
-        console.log(item)
-        const formattedParagraph=item.textContent.replace(/the/g, "replaced").replace(/The/g, "Replaced");
-        item.textContent = formattedParagraph;
-        }
+    // set up a function to handle each paragraph of the node lists for the JSON object
+            function handleEachPar(item) {
+            //  console.log(item)
+            //  Do a global find and replace of "the" and "replaced"  for every paragraph
+            const formattedParagraph=item.textContent.replace(/the/g, "replaced").replace(/The/g, "Replaced");
+            item.textContent = formattedParagraph;
+            }
 
     generalParagraph.forEach(handleEachPar);
+      
+    //  Do a global find and replace of "the" and "replaced"  for every h1 tag
 
-        const generalHeading = document.querySelector("h1");
-        const formattedHeading=generalHeading.textContent.replace(/the/g, "replaced").replace(/The/g, "Replaced");
-        generalHeading.textContent = formattedHeading;
+    const generalHeading = document.querySelector("h1");
+    const formattedHeading=generalHeading.textContent.replace(/the/g, "replaced").replace(/The/g, "Replaced");
+    generalHeading.textContent = formattedHeading;
     
     clearInterval(intervalId);
          

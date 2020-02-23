@@ -16,6 +16,7 @@ function handleJson(json) {
     const results = json.results;
   //  console.dir(results);
 
+//  row results is the encasing class
     const resultsContainer = document.querySelector(".row.results");
 
     let html = "";
@@ -23,7 +24,8 @@ function handleJson(json) {
     results.forEach(function(result) {
         let imageUrl = "https://via.placeholder.com/250";
         let i = 0;
-        console.dir(result);
+//        console.dir(result);
+// within the JSON object each URL is attached to an image label
         if (result.image) {
             imageUrl = result.image;
         }

@@ -42,14 +42,14 @@ function createCharacter(json) {
     const image = document.querySelector(".details-image");
     image.alt = json.name;
 
-    // set the img.src property depending on what properties are available in the JSON
-    if (json.image) {
-        image.src = json.image;
-    } else if (json.image_background) {
-        image.src = json.image_background;
-    } else {
-        image.src = "https://via.placeholder.com/250";
-    }
+        // set the img.src property depending on what properties are available in the JSON
+        if (json.image) {
+            image.src = json.image;
+        } else if (json.image_background) {
+            image.src = json.image_background;
+        } else {
+            image.src = "https://via.placeholder.com/250";
+        }
 
     const name = document.querySelector("h1");
     name.innerHTML = json.name;
@@ -65,6 +65,7 @@ function createCharacter(json) {
 
     const locationName = document.querySelector("#location");
     locationName.innerHTML = json.location.name;
+//   title the page with the character name and the previous document title
 
     document.title = json.name + " | " + document.title;
 }
