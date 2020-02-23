@@ -10,17 +10,18 @@ function logTime() {
         const generalParagraph = document.querySelectorAll("p");
 
         function handleEachPar(item) {
-                    console.log(item)
-                    const formattedParagraph=item.textContent.replace(/the/g, "replaced").replace(/The/g, "Replaced");
-                    item.textContent = formattedParagraph;
-                                    }
+        console.log(item)
+        const formattedParagraph=item.textContent.replace(/the/g, "replaced").replace(/The/g, "Replaced");
+        item.textContent = formattedParagraph;
+        }
 
-                    generalParagraph.forEach(handleEachPar);
+    generalParagraph.forEach(handleEachPar);
 
-                    const generalHeading = document.querySelector("h1");
-                    const formattedHeading=generalHeading.textContent.replace(/the/g, "replaced").replace(/The/g, "Replaced");
-                    generalHeading.textContent = formattedHeading;
-                     clearInterval(intervalId);
+        const generalHeading = document.querySelector("h1");
+        const formattedHeading=generalHeading.textContent.replace(/the/g, "replaced").replace(/The/g, "Replaced");
+        generalHeading.textContent = formattedHeading;
+    
+    clearInterval(intervalId);
          
 
     }

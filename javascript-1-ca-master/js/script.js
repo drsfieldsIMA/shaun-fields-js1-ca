@@ -1,4 +1,7 @@
-fetch("https://rickandmortyapi.com/api/character/")
+const creatorsUrl = "https://rickandmortyapi.com/api/character/";
+const corsEnabledUrl = "https://cors-anywhere.herokuapp.com/" + creatorsUrl;
+
+fetch(corsEnabledUrl)
     .then(function(response) {
         return response.json();
     })
@@ -11,9 +14,9 @@ fetch("https://rickandmortyapi.com/api/character/")
 
 function handleJson(json) {
     const results = json.results;
-    console.dir(results);
+  //  console.dir(results);
 
-    const resultsContainer = document.querySelector(".card");
+    const resultsContainer = document.querySelector(".row.results");
 
     let html = "";
 
@@ -25,12 +28,16 @@ function handleJson(json) {
             imageUrl = result.image;
         }
 
-        html += `  <img class="image" src="${imageUrl}" alt="${result.name}">
-                            <div class="details">
+        html += ` <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card">
+                             <img class="image" src="${imageUrl}" alt="${result.name}">
+                                <div class="details">
                                 <h4 class="name">${result.name}</h4>
                                 <p>Episode count: ${result.episode.length}</p>
                                 <a class="btn btn-primary" href="details.html?id=${result.id}">Details</a>
-                    </div> `
+                            </div> 
+                        </div>
+                    </div>`
     });
 
     resultsContainer.innerHTML = html;

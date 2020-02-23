@@ -11,8 +11,8 @@ if (params.has("id")) {
     document.location.href = "index.html";
 }
 
-const creatorsUrl = `https://rickandmortyapi.com/api/character/`;
-const detailUrl = `${creatorsUrl}${id}`;
+const charactersUrl = `https://rickandmortyapi.com/api/character/`;
+const detailUrl = `${charactersUrl}${id}`;
 
 console.log(detailUrl);
 fetch(detailUrl)
@@ -20,14 +20,14 @@ fetch(detailUrl)
         return response.json();
     })
     .then(function(json) {
-        createCreator(json);
+        createCharacter(json);
     })
     .catch(function() {
-        // document.location.href = "error.html";
+     document.location.href = "error.html";
     });
 
-function createCreator(json) {
-    console.dir(json);
+function createCharacter(json) {
+  //  console.dir(json);
 
     // get the loader div
     const loader = document.querySelector(".breadcrumb-nav");
